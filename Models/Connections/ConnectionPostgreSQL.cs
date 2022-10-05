@@ -25,6 +25,7 @@
                     conn = new NpgsqlConnection(datosConexion);
                     conn.Open();
                     Console.WriteLine("[INFO -- Conexion creada correctamente]");
+                    Console.WriteLine("[INFO -- PARAMETROS DE CONEXION \t]" + datosConexion);
 
                 }
                 catch (Exception e)
