@@ -12,14 +12,15 @@
         //Ejecutamos un SELECT * FROM alumnos
         public static NpgsqlDataReader SelectEverything(NpgsqlConnection conn)
         {
-            conn.Open();
+
             NpgsqlCommand querie = new NpgsqlCommand();
             NpgsqlDataReader result = null;
-
             try
             {
+                conn.Open();
                 querie = new NpgsqlCommand("SELECT * FROM \"basicDatabase\".\"alumnos\"", conn);
                 result = querie.ExecuteReader();
+                return result;
             }
             catch (Exception e)
             {

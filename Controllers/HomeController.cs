@@ -31,16 +31,16 @@ namespace proyectoConexionPostgreSQL.Controllers
 
             //Creamos la conexion con la base de datos
             NpgsqlConnection conn = ConnectionPostgreSQL.PostgreSQLConnection(HOST, PORT, USER, PASS, DB);           
-            NpgsqlDataReader sqlDataReader = null;
+            
 
             //Realizamos un select para probar que funcione
 
             try
             {
-
-                sqlDataReader =  QueriesSelect.SelectEverything(conn);
+                NpgsqlDataReader sqlDataReader = QueriesSelect.SelectEverything(conn);                
                 while (sqlDataReader.Read())
                 {
+                   
                     Console.WriteLine("[RESULTADOS] \n {0}\t{1}\t{2}\t{3}\t{4}\n", sqlDataReader[0], sqlDataReader[1], sqlDataReader[2], sqlDataReader[3], sqlDataReader[4]);
                 }
             } catch (Exception e)
