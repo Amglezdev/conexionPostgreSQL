@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Npgsql;
+using Npgsql.Internal;
 using proyectoConexionPostgreSQL.Models;
 using proyectoConexionPostgreSQL.Models.Connections;
 using proyectoConexionPostgreSQL.Models.Queries;
@@ -18,6 +19,8 @@ namespace proyectoConexionPostgreSQL.Controllers
 
         public IActionResult Index()
         {
+
+            //Importamos las constantes de inicio de sesion
             const string HOST = Util.VariablesConexion.HOST;
             const string PASS = Util.VariablesConexion.PASS;
             const int PORT = Util.VariablesConexion.PORT;
@@ -26,9 +29,25 @@ namespace proyectoConexionPostgreSQL.Controllers
 
             Console.WriteLine("[INFO -- Creando Conexion]");
 
-            NpgsqlConnection conn = ConnectionPostgreSQL.PostgreSQLConnection(HOST, PORT, USER, PASS, DB);
-            
-            Console.WriteLine(QueriesSelect.SelectEverything(conn)); 
+            //Creamos la conexion con la base de datos
+            NpgsqlConnection conn = ConnectionPostgreSQL.PostgreSQLConnection(HOST, PORT, USER, PASS, DB);           
+            NpgsqlDataReader sqlDataReader = null;
+
+            //Realizamos un select para probar que funcione
+
+            try
+            {
+
+                sqlDataReader =  QueriesSelect.SelectEverything(conn);
+                while (sqlDataReader.Read())
+                {
+                    Console.WriteLine("[RESULTADOS] \n {0}\t{1}\t{2}\t{3}\t{4}\n", sqlDataReader[0], sqlDataReader[1], sqlDataReader[2], sqlDataReader[3], sqlDataReader[4]);
+                }
+            } catch (Exception e)
+            {
+                Console.WriteLine("[INFO -- ERROR: Problemas en la consulta a la base de datos]" + e.Message);
+            }
+           
 
             return View();
         }

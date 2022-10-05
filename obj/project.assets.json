@@ -168,11 +168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Instituto\\C#\\proyectoConexionPostgreSQL\\proyectoConexionPostgreSQL.csproj",
+      "projectUniqueName": "E:\\Instituto\\C#\\proyectoConexionPostgreSQL.csproj",
       "projectName": "proyectoConexionPostgreSQL",
-      "projectPath": "E:\\Instituto\\C#\\proyectoConexionPostgreSQL\\proyectoConexionPostgreSQL.csproj",
+      "projectPath": "E:\\Instituto\\C#\\proyectoConexionPostgreSQL.csproj",
       "packagesPath": "C:\\Users\\Ángel Mora González\\.nuget\\packages\\",
-      "outputPath": "E:\\Instituto\\C#\\proyectoConexionPostgreSQL\\obj\\",
+      "outputPath": "E:\\Instituto\\C#\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ángel Mora González\\AppData\\Roaming\\NuGet\\NuGet.Config",
