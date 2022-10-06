@@ -84,20 +84,21 @@ namespace proyectoConexionPostgreSQL.Controllers
             Console.WriteLine("[INFO -- Comprobando estado de conexion] \t" + conn.State.ToString());
             //Realizamos un select para probar que funcione
 
-            //NpgsqlDataReader sqlDataReader = QueriesSelect.SelectEverything(conn);
-            ////TODO: Must fix exceptions taking place in this block
-            //try
-            //{
-            //    while (sqlDataReader.Read())
-            //    {
-            //        Console.WriteLine("[RESULTADOS] \n {0}\t{1}\t{2}\t{3}\t{4}\n", sqlDataReader[0], sqlDataReader[1], sqlDataReader[2], sqlDataReader[3], sqlDataReader[4]);
-            //    }
-            //}
-            //catch
-            //{
-
-            //}
             
+            ////TODO: Must fix exceptions taking place in this block
+            try
+            {
+                NpgsqlDataReader sqlDataReader = QueriesSelect.SelectEverything(conn);
+                while (sqlDataReader.Read())
+                {
+                    Console.WriteLine("[RESULTADOS] \n {0}\t{1}\t{2}\t{3}\t{4}\n", sqlDataReader[0], sqlDataReader[1], sqlDataReader[2], sqlDataReader[3], sqlDataReader[4]);
+                }
+            }
+            catch
+            {
+
+            }
+
 
 
 
