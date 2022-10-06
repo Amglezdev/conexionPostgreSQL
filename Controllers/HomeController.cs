@@ -81,8 +81,8 @@ namespace proyectoConexionPostgreSQL.Controllers
 
             //Creamos la conexion con la base de datos
             //NpgsqlConnection conn = ConnectionPostgreSQL.PostgreSQLConnection(HOST, PORT, USER, PASS, DB);
-            string datosConexion = "Server=" + HOST + "; Port=" + PORT + "; User Id=" + USER + "; Password=" + USER + "; Database=" + DB;
-            NpgsqlConnection conn = new NpgsqlConnection(datosConexion);
+
+            NpgsqlConnection conn = ConnectionPostgreSQL.generarConexion(HOST, PORT, USER, PASS, DB);
 
             //Realizamos un select para probar que funcione
 

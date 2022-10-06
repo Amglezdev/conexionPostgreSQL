@@ -7,7 +7,7 @@
          * ConnectionPostgreSQL -> Clase con la que creamos la conexion con la base de datos de PostgreSQL, basandonos en la informacion ubicada en el fichero util.VariablesConexion
          */
 
-        public static NpgsqlConnection PostgreSQLConnection(string host, int port, string user, string pass, string db)
+        public static NpgsqlConnection generarConexion(string host, int port, string user, string pass, string db)
         {
             Console.WriteLine("[INFO-Crear Conexion] Entrando en la conexion");
 
