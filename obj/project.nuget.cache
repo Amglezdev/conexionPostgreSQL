@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5EwajVSIp14c6IBbV/ap0zvlPu2QUL/MtVOtyWX9tlNZiQtjfibT3YiggBKumIqyoELfN5GZTaFeVxL0l4XlNw==",
+  "dgSpecHash": "d7aJIneL2Va4r/Z86S3tMxxgF1IkzuqqyxDeMq+mCIJxIKYy10jofvjUHmsVe0UQGcMBfUR5RIH4R8IRsCG/qQ==",
   "success": true,
-  "projectFilePath": "E:\\Instituto\\C#\\proyectoConexionPostgreSQL.csproj",
+  "projectFilePath": "C:\\Users\\CSI21-Amorlez\\Desktop\\C#\\conexionPostgre\\proyectoConexionPostgreSQL.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Ángel Mora González\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.2\\microsoft.extensions.logging.abstractions.6.0.2.nupkg.sha512",
-    "C:\\Users\\Ángel Mora González\\.nuget\\packages\\npgsql\\7.0.0-rc.1\\npgsql.7.0.0-rc.1.nupkg.sha512",
-    "C:\\Users\\Ángel Mora González\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\CSI21-Amorlez\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.2\\microsoft.extensions.logging.abstractions.6.0.2.nupkg.sha512",
+    "C:\\Users\\CSI21-Amorlez\\.nuget\\packages\\npgsql\\7.0.0-rc.1\\npgsql.7.0.0-rc.1.nupkg.sha512",
+    "C:\\Users\\CSI21-Amorlez\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

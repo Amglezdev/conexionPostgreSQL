@@ -80,29 +80,26 @@ namespace proyectoConexionPostgreSQL.Controllers
             Console.WriteLine("[INFO -- Creando Conexion]");
 
             //Creamos la conexion con la base de datos
-            //NpgsqlConnection conn = ConnectionPostgreSQL.PostgreSQLConnection(HOST, PORT, USER, PASS, DB);
-            string datosConexion = "Server=" + HOST + "; Port=" + PORT + "; User Id=" + USER + "; Password=" + USER + "; Database=" + DB;
-            NpgsqlConnection conn = new NpgsqlConnection(datosConexion);
-
+            NpgsqlConnection conn = ConnectionPostgreSQL.PostgreSQLConnection(HOST, PORT, USER, PASS, DB);
+            Console.WriteLine("[INFO -- Comprobando estado de conexion] \t" + conn.State.ToString());
             //Realizamos un select para probar que funcione
 
-
+           
             //TODO: Must fix exceptions taking place in this block
             try
             {
-                conn.Open();
+               conn.Open();
                 NpgsqlDataReader sqlDataReader = QueriesSelect.SelectEverything(conn);
                 while (sqlDataReader.Read())
                 {
-
                     Console.WriteLine("[RESULTADOS] \n {0}\t{1}\t{2}\t{3}\t{4}\n", sqlDataReader[0], sqlDataReader[1], sqlDataReader[2], sqlDataReader[3], sqlDataReader[4]);
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine("[INFO -- ERROR: Problemas en la consulta a la base de datos desde el controlador: ]\t" + '[' + e.Message + ']');
+                Console.WriteLine("[INFO -- ERROR: Problemas en la consulta a la base de datos desde el controlador: ]\t" + '[' + e.Message + "\t" + e.ToString() +  ']');
             }
-            
+            conn.Close();
 
 
             return View();

@@ -3,9 +3,8 @@
     "",
     "\\Models",
     "\\Models\\Connections",
-    "\\Models\\Queries",
-    "\\Util"
+    "\\Models\\DTOs",
+    "\\Models\\Queries"
   ],
-  "SelectedNode": "\\Models\\Queries\\QueriesSelect.cs",
   "PreviewInSolutionExplorer": false
 }

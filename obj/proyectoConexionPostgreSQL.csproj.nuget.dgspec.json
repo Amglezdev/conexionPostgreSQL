@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Instituto\\C#\\proyectoConexionPostgreSQL.csproj": {}
+    "C:\\Users\\CSI21-Amorlez\\Desktop\\C#\\conexionPostgre\\proyectoConexionPostgreSQL.csproj": {}
   },
   "projects": {
-    "E:\\Instituto\\C#\\proyectoConexionPostgreSQL.csproj": {
+    "C:\\Users\\CSI21-Amorlez\\Desktop\\C#\\conexionPostgre\\proyectoConexionPostgreSQL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Instituto\\C#\\proyectoConexionPostgreSQL.csproj",
+        "projectUniqueName": "C:\\Users\\CSI21-Amorlez\\Desktop\\C#\\conexionPostgre\\proyectoConexionPostgreSQL.csproj",
         "projectName": "proyectoConexionPostgreSQL",
-        "projectPath": "E:\\Instituto\\C#\\proyectoConexionPostgreSQL.csproj",
-        "packagesPath": "C:\\Users\\Ángel Mora González\\.nuget\\packages\\",
-        "outputPath": "E:\\Instituto\\C#\\obj\\",
+        "projectPath": "C:\\Users\\CSI21-Amorlez\\Desktop\\C#\\conexionPostgre\\proyectoConexionPostgreSQL.csproj",
+        "packagesPath": "C:\\Users\\CSI21-Amorlez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CSI21-Amorlez\\Desktop\\C#\\conexionPostgre\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Ángel Mora González\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\CSI21-Amorlez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
