@@ -4,6 +4,7 @@ using Npgsql;
 using Npgsql.Internal;
 using proyectoConexionPostgreSQL.Models;
 using proyectoConexionPostgreSQL.Models.Connections;
+using proyectoConexionPostgreSQL.Models.DTOs;
 using proyectoConexionPostgreSQL.Models.Queries;
 using System.Diagnostics;
 
@@ -69,14 +70,7 @@ namespace proyectoConexionPostgreSQL.Controllers
 
         public IActionResult Index()
         {
-            /*
-             * SELECT al.\"idAlumno\", al.nombre, count(aha.\"idAsignatura\") 
-                FROM \"pruebasConexion"\.alumnos as al 
-                JOIN \"pruebasConexion"\.alumn_has_asignaturas  as aha ON aha."idAlumno" = al."idAlumno"
-                WHERE al."idAlumno" = 3 
-                GROUP BY al."idAlumno"
-
-             */
+           
             //Importamos las constantes de inicio de sesion
             const string HOST = Util.VariablesConexion.HOST;
             const string PASS = Util.VariablesConexion.PASS;
@@ -95,11 +89,17 @@ namespace proyectoConexionPostgreSQL.Controllers
             ////TODO: Must fix exceptions taking place in this block
             try
             {
-                List<AlumnoDTO> listAl = QueriesSelect.ConsultaSelectPostgreSQL(conn);
+                List<AlumnoDTO> listAl = QueriesSelect.ConsultaSelectAll(conn);
+                List<AsignaturaDTO> listAs = QueriesSelect.ConsultaSelecAsignatura(conn);
+                List<alumnoHasAsignaturaDTO> listAha = QueriesSelect.ConsultaSelectAha(conn);
                 foreach (AlumnoDTO al in listAl)
                 {
-                    Console.WriteLine(listAl.ToString());
+                    Console.WriteLine(al.ToString());                    
                 }
+                foreach (AsignaturaDTO a in listAs)
+                    Console.WriteLine(a.ToString());
+                foreach (alumnoHasAsignaturaDTO a in listAha)
+                    Console.WriteLine(a.ToString());
             }
             catch
             {
