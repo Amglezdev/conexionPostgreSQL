@@ -27,7 +27,7 @@
             try
             {
                 //Se define y ejecuta la consulta Select
-                NpgsqlCommand consulta = new NpgsqlCommand("SELECT * FROM \"pruebasConexion\".\"alumnos\"", conexionGenerada);
+                NpgsqlCommand consulta = new NpgsqlCommand("SELECT al.\"idAlumno\", al.\"nombre\", count(aha.\"idAsignatura\" FROM \"pruebasConexion\".alumnos\" as al JOIN \"pruebasConexion\".alumn_has_asignaturas as aha on aha.\"idAlumno\" = al.\"idAlumno\" GROUP BY al.\"idAlumno\"", conexionGenerada);
                 NpgsqlDataReader resultadoConsulta = consulta.ExecuteReader();
 
                 //Paso de DataReader a lista de alumnoDTO
@@ -57,6 +57,7 @@
                 //Se define y ejecuta la consulta Select
                 conexionGenerada.Open();
                 NpgsqlCommand consulta = new NpgsqlCommand("SELECT * FROM \"pruebasConexion\".\"asignaturas\"", conexionGenerada);
+                
                 NpgsqlDataReader resultadoConsulta = consulta.ExecuteReader();
 
                 //Paso de DataReader a lista de alumnoDTO
