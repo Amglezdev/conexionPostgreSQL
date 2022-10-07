@@ -9,25 +9,15 @@
      */
     public class QueriesSelect
     {
-
-
-        //Ejecutamos un SELECT * FROM alumnos
-
-        /*
-            * SELECT al.\"idAlumno\", al.\"nombre\", count(aha.\"idAsignatura\") 
-               FROM \"pruebasConexion\".alumnos as al 
-               JOIN \"pruebasConexion\".alumn_has_asignaturas  as aha ON aha.\"idAlumno\" = al.\"idAlumno\"
-               WHERE al.\"idAlumno\" = 3 
-               GROUP BY al.\"idAlumno\"
-
-            */
+        
+        //Metodo que nos devuelve una lista de objetos del tipo AlumnoDTO con los datos obtenidos de la tabla alumno
         public static List<AlumnoDTO> ConsultaSelectAll(NpgsqlConnection conexionGenerada)
         {
             List<AlumnoDTO> listAlumnos = new List<AlumnoDTO>();
             try
             {
                 //Se define y ejecuta la consulta Select
-                NpgsqlCommand consulta = new NpgsqlCommand("SELECT al.\"idAlumno\", al.\"nombre\", count(aha.\"idAsignatura\" FROM \"pruebasConexion\".alumnos\" as al JOIN \"pruebasConexion\".alumn_has_asignaturas as aha on aha.\"idAlumno\" = al.\"idAlumno\" GROUP BY al.\"idAlumno\"", conexionGenerada);
+                NpgsqlCommand consulta = new NpgsqlCommand("SELECT * FROM \"pruebasConexion\".\"alumnos\"",conexionGenerada); ;
                 NpgsqlDataReader resultadoConsulta = consulta.ExecuteReader();
 
                 //Paso de DataReader a lista de alumnoDTO
@@ -49,6 +39,7 @@
             }
             return listAlumnos;
         }
+        //Metodo que nos devuelve una lista de objetos del tipo Asignatura con los datos obtenidos de la tabla asignaturas
         public static List<AsignaturaDTO> ConsultaSelecAsignatura(NpgsqlConnection conexionGenerada)
         {
             List<AsignaturaDTO> listAsignatura = new List<AsignaturaDTO>();
@@ -80,6 +71,7 @@
             return listAsignatura;
         }
 
+        //Metodo que nos devuelve una lista de objetos del tipo AlumnoHasAsignaturas con los datos obtenidos de la tabla Almn_has_asig
         public static List<alumnoHasAsignaturaDTO> ConsultaSelectAha(NpgsqlConnection conexionGenerada)
         {
             List<alumnoHasAsignaturaDTO> listAha = new List<alumnoHasAsignaturaDTO>();

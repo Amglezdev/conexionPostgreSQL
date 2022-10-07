@@ -1,5 +1,9 @@
 ﻿namespace proyectoConexionPostgreSQL.Models.DTOs
 {
+    /*
+     * alumnoHasAsignaturaDTO --> Clase que nos permite manipular los datos de la tabla alumnoHasAsignaturasDTO como objetos de C#
+     */
+
     public class alumnoHasAsignaturaDTO
     {
 
@@ -16,7 +20,7 @@
 
         public override string ToString()
         {
-            return String.Format("[AHA]\t{1}\t{2}\t{3}", idAha, idAlumno, idAsignatura);
+            return String.Format("[AHA] \t{1}\t{2}\t{3}", idAha, idAlumno, idAsignatura);
         }
     }
 }

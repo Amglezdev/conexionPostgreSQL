@@ -2,9 +2,16 @@
 
 namespace proyectoConexionPostgreSQL.Models.DTOs.PostgreToDTO
 {
+
+    /*
+     * PostgreToDto --> Clase con la que convertimos los datos obtenidos de los dtos a listas para poder leerlos facilmente
+     */
+
+
     public class PostgreToDto
     {
 
+        //Convertimos los datos de una consulta a la tabla Asignaturas a lista para poder leerlos
         public static List<AlumnoDTO> ReaderAListAlumnoDTO(NpgsqlDataReader resultadoConsulta)
         {
             List<AlumnoDTO> listAlumnos = new List<AlumnoDTO>();
@@ -16,7 +23,7 @@ namespace proyectoConexionPostgreSQL.Models.DTOs.PostgreToDTO
             }
             return listAlumnos;
         }
-
+        //Convertimos los datos de una consulta a la tabla Asignaturas a lista para poder leerlos
         public static List<AsignaturaDTO> ReaderAListAsignaturaDTO(NpgsqlDataReader resultadoConsulta)
         {
             List<AsignaturaDTO> listAsignaturas = new List<AsignaturaDTO>();
@@ -29,6 +36,8 @@ namespace proyectoConexionPostgreSQL.Models.DTOs.PostgreToDTO
             return listAsignaturas;
         }
 
+
+        //Convertimos los datos de una consulta a la tabla Alumn_has_Asign a lista para poder leerlos
         public static List<alumnoHasAsignaturaDTO> ReaderAListAhaDTO(NpgsqlDataReader resultadoConsulta)
         {
             List<alumnoHasAsignaturaDTO> listAha = new List<alumnoHasAsignaturaDTO>();

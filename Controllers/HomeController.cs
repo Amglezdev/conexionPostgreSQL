@@ -19,58 +19,9 @@ namespace proyectoConexionPostgreSQL.Controllers
             _logger = logger;
         }
 
-        //public IActionResult Index(ConnectionPostgreSQL conexionPostgreSQL)
-        //{
-        //    System.Console.WriteLine("[INFORMACIÓN-HomeController-Index] Entra en Index");
-
-        //    //CONSTANTES
-        //    const string HOST = Util.VariablesConexion.HOST;
-        //    const int PORT = Util.VariablesConexion.PORT;
-        //    const string USER = Util.VariablesConexion.USER;
-        //    const string PASS = Util.VariablesConexion.PASS;
-        //    const string DB = Util.VariablesConexion.DB;
-
-        //    //Se genera una conexión a PostgreSQL y validamos que esté abierta fuera del método
-        //    var estadoGenerada = "";
-        //    NpgsqlConnection conexionGenerada = new NpgsqlConnection();
-        //    NpgsqlCommand consulta = new NpgsqlCommand();
-        //    conexionGenerada = ConnectionPostgreSQL.PostgreSQLConnection(HOST, PORT, DB, USER, PASS);
-        //    estadoGenerada = conexionGenerada.State.ToString();
-        //    System.Console.WriteLine("[INFORMACIÓN-HomeController-Index] Estado conexión generada: " + estadoGenerada);
-
-        //    //Se define la consulta a realizar y se guarda el resultado
-        //    try
-        //    {
-
-        //        consulta = new NpgsqlCommand("SELECT * FROM \"proyectoEclipse\".\"alumnos\"", conexionGenerada);
-        //        NpgsqlDataReader resultadoConsulta = consulta.ExecuteReader();
-        //        while (resultadoConsulta.Read())
-        //        {
-
-        //            Console.Write("{0}\t{1}\t{2}\t{3} \n",
-        //                resultadoConsulta[0], resultadoConsulta[1], resultadoConsulta[2], resultadoConsulta[3]);
-
-        //        }
-
-        //        System.Console.WriteLine("[INFORMACIÓN-HomeController-Index] Cierre conexión y conjunto de datos");
-        //        conexionGenerada.Close();
-        //        resultadoConsulta.Close();
-
-        //    }
-        //    catch (Exception e)
-        //    {
-
-        //        System.Console.WriteLine("[INFORMACIÓN-HomeController-Index] Error al ejecutar consulta: " + e);
-        //        conexionGenerada.Close();
-
-        //    }
-
-        //    return View();
-        //}
-
         public IActionResult Index()
         {
-           
+
             //Importamos las constantes de inicio de sesion
             const string HOST = Util.VariablesConexion.HOST;
             const string PASS = Util.VariablesConexion.PASS;
@@ -89,31 +40,34 @@ namespace proyectoConexionPostgreSQL.Controllers
             ////TODO: Must fix exceptions taking place in this block
             try
             {
+                //Almacenamos los resultados en listas para despues mostrarlos
                 List<AlumnoDTO> listAl = QueriesSelect.ConsultaSelectAll(conn);
                 List<AsignaturaDTO> listAs = QueriesSelect.ConsultaSelecAsignatura(conn);
                 List<alumnoHasAsignaturaDTO> listAha = QueriesSelect.ConsultaSelectAha(conn);
+
+
+                //Mostramos los resultados de las queries
                 foreach (AlumnoDTO al in listAl)
                 {
-                    Console.WriteLine(al.ToString());                    
+                    Console.WriteLine(al.ToString());
                 }
                 foreach (AsignaturaDTO a in listAs)
+                {
                     Console.WriteLine(a.ToString());
-                foreach (alumnoHasAsignaturaDTO a in listAha)
-                    Console.WriteLine(a.ToString());
+                }
+
+                foreach (alumnoHasAsignaturaDTO b in listAha)
+                {
+                    Console.WriteLine(b.ToString());
+                }
             }
-            catch
+            catch (Exception e)
             {
-
+                Console.WriteLine("[INFO -- Controllers.HomeController.Index -- ] " + e.Message);
             }
-
-
-
-
 
             return View();
         }
-
-
 
         public IActionResult Privacy()
         {
@@ -126,15 +80,5 @@ namespace proyectoConexionPostgreSQL.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public static void TestVistas()
-        {
-            for (int i = 0; i < 20; i++)
-            {
-                Console.WriteLine("Test de vistas");
-
-            }
-
-
-        }
     }
 }

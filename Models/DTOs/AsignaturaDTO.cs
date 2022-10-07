@@ -1,5 +1,9 @@
 ﻿namespace proyectoConexionPostgreSQL.Models.DTOs
 {
+
+    /*
+     * AsignaturaDTO --> Clase que nos permimte manipular los datos de la tabla Asignaturas como objetos de C#
+     */
     public class AsignaturaDTO
     {
 

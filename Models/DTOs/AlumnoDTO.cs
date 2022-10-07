@@ -1,7 +1,7 @@
 ﻿using System;
 
 /*
- * AlumnoDTO --> Clase en la que creamos los dtos para trabajar con la base de datos alumno
+ * AlumnoDTO --> Clase que nos permite manipular los datos de la tabla Alumnos como objetos de C#
  */
 
 
