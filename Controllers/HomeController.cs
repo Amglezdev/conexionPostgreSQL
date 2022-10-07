@@ -69,7 +69,14 @@ namespace proyectoConexionPostgreSQL.Controllers
 
         public IActionResult Index()
         {
+            /*
+             * SELECT al.\"idAlumno\", al.nombre, count(aha.\"idAsignatura\") 
+                FROM \"pruebasConexion"\.alumnos as al 
+                JOIN \"pruebasConexion"\.alumn_has_asignaturas  as aha ON aha."idAlumno" = al."idAlumno"
+                WHERE al."idAlumno" = 3 
+                GROUP BY al."idAlumno"
 
+             */
             //Importamos las constantes de inicio de sesion
             const string HOST = Util.VariablesConexion.HOST;
             const string PASS = Util.VariablesConexion.PASS;
@@ -84,10 +91,10 @@ namespace proyectoConexionPostgreSQL.Controllers
             Console.WriteLine("[INFO -- Comprobando estado de conexion] \t" + conn.State.ToString());
             //Realizamos un select para probar que funcione
 
-            
+
             ////TODO: Must fix exceptions taking place in this block
             try
-            {                
+            {
                 NpgsqlDataReader sqlDataReader = QueriesSelect.SelectEverything(conn);
                 while (sqlDataReader.Read())
                 {
