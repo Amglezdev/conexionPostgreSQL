@@ -15,11 +15,11 @@
             try
             {
                 //Se define y ejecuta la consulta Select
-                NpgsqlCommand consulta = new NpgsqlCommand("SELECT * FROM \"proyectoEclipse\".\"alumnos\"", conexionGenerada);
+                NpgsqlCommand consulta = new NpgsqlCommand("SELECT * FROM \"pruebasConexion\".\"alumnos\"", conexionGenerada);
                 NpgsqlDataReader resultadoConsulta = consulta.ExecuteReader();
 
                 //Paso de DataReader a lista de alumnoDTO
-                listAlumnos = DTOs.ADTO.ReaderAListDTO.ReaderAListAlumnoDTO(resultadoConsulta);
+                listAlumnos = DTOs.PostgreToDTO.PostgreToDto.ReaderAListAlumnoDTO(resultadoConsulta);
                 int cont = listAlumnos.Count();
                 System.Console.WriteLine("[INFORMACIÓN-ConsultasPostgreSQL-ConsultaSelectPostgreSQL] Lista compuesta por: " + cont + " alumnos");
 

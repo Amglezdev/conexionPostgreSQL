@@ -95,10 +95,10 @@ namespace proyectoConexionPostgreSQL.Controllers
             ////TODO: Must fix exceptions taking place in this block
             try
             {
-                NpgsqlDataReader sqlDataReader = QueriesSelect.SelectEverything(conn);
-                while (sqlDataReader.Read())
+                List<AlumnoDTO> listAl = QueriesSelect.ConsultaSelectPostgreSQL(conn);
+                foreach (AlumnoDTO al in listAl)
                 {
-                    Console.WriteLine("[RESULTADOS] \n {0}\t{1}\t{2}\t{3}\t{4}\n", sqlDataReader[0], sqlDataReader[1], sqlDataReader[2], sqlDataReader[3], sqlDataReader[4]);
+                    Console.WriteLine(listAl.ToString());
                 }
             }
             catch

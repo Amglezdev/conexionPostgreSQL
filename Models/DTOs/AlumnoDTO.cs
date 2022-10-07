@@ -25,4 +25,9 @@ public class AlumnoDTO
             email = Email;
         }
 
+    public override string ToString()
+    {
+        return String.Format("[ALUMNO] \t{0}\t{1}\t{2}\t{3}", id_alumno, nombre, apellidos, email);
     }
+
+}

@@ -169,11 +169,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CSI21-Amorlez\\Desktop\\C#\\conexionPostgre\\proyectoConexionPostgreSQL.csproj",
+      "projectUniqueName": "C:\\Users\\CSI21-Amorlez\\Documents\\postgreSQLConnection\\proyectoConexionPostgreSQL.csproj",
       "projectName": "proyectoConexionPostgreSQL",
-      "projectPath": "C:\\Users\\CSI21-Amorlez\\Desktop\\C#\\conexionPostgre\\proyectoConexionPostgreSQL.csproj",
+      "projectPath": "C:\\Users\\CSI21-Amorlez\\Documents\\postgreSQLConnection\\proyectoConexionPostgreSQL.csproj",
       "packagesPath": "C:\\Users\\CSI21-Amorlez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CSI21-Amorlez\\Desktop\\C#\\conexionPostgre\\obj\\",
+      "outputPath": "C:\\Users\\CSI21-Amorlez\\Documents\\postgreSQLConnection\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

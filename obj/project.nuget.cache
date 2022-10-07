@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d7aJIneL2Va4r/Z86S3tMxxgF1IkzuqqyxDeMq+mCIJxIKYy10jofvjUHmsVe0UQGcMBfUR5RIH4R8IRsCG/qQ==",
+  "dgSpecHash": "jOPOAoows2CAhvfH0G0bg5PIKfHcR4DRKQoeVhlUFYnZa6oJNkQvcr3o3eapAYaQhn2HKWgmmaVB0JhONAyAhg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\CSI21-Amorlez\\Desktop\\C#\\conexionPostgre\\proyectoConexionPostgreSQL.csproj",
+  "projectFilePath": "C:\\Users\\CSI21-Amorlez\\Documents\\postgreSQLConnection\\proyectoConexionPostgreSQL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CSI21-Amorlez\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.2\\microsoft.extensions.logging.abstractions.6.0.2.nupkg.sha512",
     "C:\\Users\\CSI21-Amorlez\\.nuget\\packages\\npgsql\\7.0.0-rc.1\\npgsql.7.0.0-rc.1.nupkg.sha512",
