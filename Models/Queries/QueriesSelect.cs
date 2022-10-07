@@ -20,6 +20,7 @@
                 querie = new NpgsqlCommand("SELECT * FROM \"pruebasConexion\".\"alumnos\"", conn);
                 NpgsqlDataReader result = querie.ExecuteReader(); 
                 Console.WriteLine("[RESULTADOS] \n {0}\t{1}\t{2}\t{3}\t{4}\n", result[0], result[1], result[2], result[3], result[4]);
+                conn.Close();
                 return result;
                 
                
@@ -27,7 +28,7 @@
             catch (Exception e)
             {
                 NpgsqlDataReader result = null;
-                Console.WriteLine("[INFO -ERROR- SelectEverything]" + e.Message);
+                Console.WriteLine("[INFO -ERROR- SelectEverything] " + e.Message);
                 conn.Close();
                 return result;
             }
@@ -43,8 +44,10 @@
 
             try
             {
+                conn.Open();
                 querie = new NpgsqlCommand("SELECT nombre, appelidos FROM \"basicDatabase\".\"alumnos\"", conn);
                 result = querie.ExecuteReader();
+                conn.Close();
             }
             catch (Exception e)
             {

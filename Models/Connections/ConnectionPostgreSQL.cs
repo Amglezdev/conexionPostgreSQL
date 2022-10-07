@@ -18,7 +18,7 @@
             Console.WriteLine(datosConexion);
 
             //Comprobamos que el string de conexion se ha creado correctamente 
-            if (string.IsNullOrWhiteSpace(datosConexion))
+            if (!string.IsNullOrWhiteSpace(datosConexion))
             {
                 try
                 {
@@ -26,7 +26,7 @@
                     conn.Open();
                     Console.WriteLine("[INFO -- Conexion creada correctamente]");
                     Console.WriteLine("[INFO -- PARAMETROS DE CONEXION \t]" + datosConexion);
-                    conn.Close();
+                    
 
                 }
                 catch (Exception e)

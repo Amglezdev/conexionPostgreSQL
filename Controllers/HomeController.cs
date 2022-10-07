@@ -87,7 +87,7 @@ namespace proyectoConexionPostgreSQL.Controllers
             
             ////TODO: Must fix exceptions taking place in this block
             try
-            {
+            {                
                 NpgsqlDataReader sqlDataReader = QueriesSelect.SelectEverything(conn);
                 while (sqlDataReader.Read())
                 {
