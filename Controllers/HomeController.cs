@@ -66,6 +66,8 @@ namespace proyectoConexionPostgreSQL.Controllers
                 Console.WriteLine("[INFO -- Controllers.HomeController.Index -- ] " + e.Message);
             }
 
+            QueriesInsert.InsertAlumno(conn);
+
             return View();
         }
 
